@@ -1,0 +1,38 @@
+name: CI for main.c
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: C requirements
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc
+
+      - name: Compile the program
+        run: make
+
+      - name: Run program
+        run: make run
+
+      - name: Add \n to output
+        run: make run-n
+
+      - name: Remove fflush and run
+        run: make run-f
+
+      - name: Redirect output to file
+        run: make run-r
+
+      - name: Clean build
+        run: make clean
