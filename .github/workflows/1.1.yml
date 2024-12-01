@@ -1,4 +1,4 @@
-name: CI for main.c
+name: CI for 1.1
 
 on:
   push:

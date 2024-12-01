@@ -1,4 +1,4 @@
-name: CI for Program with Options
+name: CI for 1.2
 
 on:
   push:
@@ -28,5 +28,7 @@ jobs:
           ./script.sh
 
       - name: Check output.log
-        run: cat output.log
+        run: |
+          cd 01-IO_Flush/1.2
+          cat output.log
 
