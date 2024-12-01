@@ -20,23 +20,32 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y gcc
 
-      - name: Direct to folder
-        run: cd 01-IO_Flush/1.1
-
       - name: Compile the program
-        run: make
+        run: |
+          cd 01-IO_Flush/1.1
+          make
 
       - name: Run program
-        run: make run
+        run: |
+          cd 01-IO_Flush/1.1
+          make run
 
       - name: Add \n to output
-        run: make run-n
+        run: |
+          cd 01-IO_Flush/1.1
+          make run-n
 
       - name: Remove fflush and run
-        run: make run-f
+        run: |
+            cd 01-IO_Flush/1.1
+            make run-f
 
       - name: Redirect output to file
-        run: make run-r
+        run: |
+            cd 01-IO_Flush/1.1 
+            make run-r
 
       - name: Clean build
-        run: make clean
+        run: |
+            cd 01-IO_Flush/1.1 
+            make clean
