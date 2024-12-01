@@ -1,2 +1,2 @@
-![CI for 1.1](https://github.com/PavelMkr/modern-programming-tools-and-technologies/actions/workflows/1.1.yml)
-![CI for 1.2](https://github.com/PavelMkr/modern-programming-tools-and-technologies/actions/workflows/1.2.yml)
+![CI for 1.1](https://github.com/PavelMkr/modern-programming-tools-and-technologies/actions/workflows/1.1.yml/badge.svg)
+![CI for 1.2](https://github.com/PavelMkr/modern-programming-tools-and-technologies/actions/workflows/1.2.yml/badge.svg)
