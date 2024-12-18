@@ -14,16 +14,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          submodules: recursive 
 
       - name: C requirements
         run: |
           sudo apt-get update
-          sudo apt-get install -y gcc
-
-      - name: Create submodule utest
-        run: |
-          cd 03.Fractal/
-          git submodule add https://github.com/sheredom/utest.h utest
+          sudo apt-get install -y gcc cmake
 
       - name: CMake
         run: |
@@ -39,7 +36,7 @@ jobs:
 
       - name: Run utest
         run: |
-          cd 01-IO_Flush/1.1
+          cd 03.Fractal/build
           ./test_fractal
 
       - name: Run program
