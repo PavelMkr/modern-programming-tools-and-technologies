@@ -1,4 +1,4 @@
-name: CI for 1.1
+name: Fractals
 
 on:
   push:
@@ -26,6 +26,7 @@ jobs:
           mkdir build
           cd build/
           cmake ..
+          
       - name: Compile the program
         run: |
           cd 03.Fractal/build
