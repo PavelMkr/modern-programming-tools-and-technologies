@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - 03-fractals
+      - 03-fractal
   pull_request:
 
 jobs:
