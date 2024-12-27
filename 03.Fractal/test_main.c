@@ -26,4 +26,30 @@ UTEST_F(ImageTestFixture, ClearImage2){
     ASSERT_EQ(0, get_pixel(utest_fixture->i, 10, 10));
 }
 
+UTEST_F(ImageTestFixture, EmptyFractal) {
+    clear_image(utest_fixture->i);
+    empty_fractal(utest_fixture->i);
+
+    ASSERT_EQ(0, get_pixel(utest_fixture->i, 0, 0));
+    ASSERT_EQ(255, get_pixel(utest_fixture->i, 1, 1));
+}
+
+UTEST_F(ImageTestFixture, FillRandom) {
+    fill_random(utest_fixture->i);
+
+    pixel_data p1 = get_pixel(utest_fixture->i, 10, 10);
+    pixel_data p2 = get_pixel(utest_fixture->i, 20, 20);
+    ASSERT_NE(p1, p2);
+}
+
+UTEST(CreateImage, DifferentSizeImage) {
+    image_p img = create_image(100, 900);
+    ASSERT_NE((void *)img, NULL);
+
+    set_pixel(img, 99, 899, 100);
+    ASSERT_EQ(100, get_pixel(img, 99, 899));
+
+    free_image(img);
+}
+
 UTEST_MAIN();
