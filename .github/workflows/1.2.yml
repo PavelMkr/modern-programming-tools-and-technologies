@@ -1,4 +1,4 @@
-name: CI for 1.2
+name: 01.IO_Flush/1.2
 
 on:
   push:
@@ -23,12 +23,12 @@ jobs:
 
       - name: Run the shell script
         run: |
-          cd 01-IO_Flush/1.2
+          cd 01.IO_Flush/1.2
           chmod +x script.sh
           ./script.sh
 
       - name: Check output.log
         run: |
-          cd 01-IO_Flush/1.2
+          cd 01.IO_Flush/1.2
           cat output.log
 

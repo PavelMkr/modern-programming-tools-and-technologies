@@ -1,4 +1,4 @@
-name: CI for 1.1
+name: 01.IO_Flush/1.1
 
 on:
   push:
@@ -22,30 +22,30 @@ jobs:
 
       - name: Compile the program
         run: |
-          cd 01-IO_Flush/1.1
+          cd 01.IO_Flush/1.1
           make
 
       - name: Run program
         run: |
-          cd 01-IO_Flush/1.1
+          cd 01.IO_Flush/1.1
           make run
 
       - name: Add \n to output
         run: |
-          cd 01-IO_Flush/1.1
+          cd 01.IO_Flush/1.1
           make run-n
 
       - name: Remove fflush and run
         run: |
-            cd 01-IO_Flush/1.1
+            cd 01.IO_Flush/1.1
             make run-f
 
       - name: Redirect output to file
         run: |
-            cd 01-IO_Flush/1.1 
+            cd 01.IO_Flush/1.1 
             make run-r
 
       - name: Clean build
         run: |
-            cd 01-IO_Flush/1.1 
+            cd 01.IO_Flush/1.1 
             make clean
