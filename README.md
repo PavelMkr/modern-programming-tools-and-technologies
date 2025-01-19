@@ -1,3 +1,4 @@
+![03.Fractals](https://github.com/PavelMkr/modern-programming-tools-and-technologies/actions/workflows/fractals.yml/badge.svg)
 ![01.IO_Flush/1.1](https://github.com/PavelMkr/modern-programming-tools-and-technologies/actions/workflows/1.1.yml/badge.svg)
 ![01.IO_Flush/1.2](https://github.com/PavelMkr/modern-programming-tools-and-technologies/actions/workflows/1.2.yml/badge.svg)
 
