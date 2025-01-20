@@ -1,0 +1,50 @@
+name: Fractals
+
+on:
+  push:
+    branches:
+      - main
+      - 03-fractal
+  pull_request:
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive 
+
+      - name: C requirements
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc cmake
+
+      - name: CMake
+        run: |
+          cd 03.Fractal/
+          mkdir build
+          cd build/
+          cmake ..
+          
+      - name: Compile the program
+        run: |
+          cd 03.Fractal/build
+          make
+
+      - name: Run utest
+        run: |
+          cd 03.Fractal/build
+          ./test_fractal
+
+      - name: Run program
+        run: |
+          cd 03.Fractal/build
+          ./fractal
+
+      - name: Clean build
+        run: |
+            cd 03.Fractal/build
+            make clean
